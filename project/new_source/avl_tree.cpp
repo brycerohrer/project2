@@ -97,7 +97,7 @@ void AVLTree::rotateToRight(AVLNode* &root){
   }
 }
 
-void AVLTree::balanceFromLeft(AVLNode* &root){
+void AVLTree::balanceFromLeft(AVLNode* &root){  // handle the case 0 
 
   AVLNode *p;
   AVLNode *w;
@@ -143,7 +143,7 @@ void AVLTree::balanceFromLeft(AVLNode* &root){
 }
 
 
-void AVLTree::balanceFromRight(AVLNode* &root){
+void AVLTree::balanceFromRight(AVLNode* &root){ // handle the case 0 
   AVLNode *p;
   AVLNode *w;
 
@@ -187,14 +187,14 @@ void AVLTree::balanceFromRight(AVLNode* &root){
     }
 }
 
-void AVLTree::print(char letter){
+void AVLTree::print(char letter){ // handle print function 
 
   cout << "Need to implement this print() function \n";
   return; 
 }
 
 
-AVLNode* AVLTree::getPred(AVLNode* node){
+AVLNode* AVLTree::getPred(AVLNode* node){ // get predecesor function needs implemented
 
   cout << "Need to implement this getPred() function \n";
   return NULL; 
@@ -206,7 +206,7 @@ void AVLTree::remove(int badValue){
   remove(root,badValue, isShorter);
 }
 
-void AVLTree::remove(AVLNode* &root, int badValue, bool& isShorter){
+void AVLTree::remove(AVLNode* &root, int badValue, bool& isShorter){  // implement remove function (not sure what this does)
 
   cout << "Need to implement this remove() function \n";
   return; 
