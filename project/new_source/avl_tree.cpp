@@ -187,12 +187,82 @@ void AVLTree::balanceFromRight(AVLNode* &root){ // handle the case 0
     }
 }
 
-void AVLTree::print(char letter){ // handle print function 
+void AVLTree::print(char letter){
+if (letter == 'p') {
+   if(root == NULL){
+     cout<<"list is empty"<<endl;
+     return;
+   }
+  //     {
+        if(root->left != NULL){
+          printtree(root->left);
+        }
+          std::cout << root->value << " ";
+        if(root->right != NULL){
+          printtree(root->right);
+}
+}
+if (letter == 'h'){
+          printheight(root->left, 1);
+          printheight(root, 0);
+          printheight(root->right, 1);
+          std::cout<<endl;
+}
+}
+void AVLTree::printtree(AVLNode* node){
 
-  cout << "Need to implement this print() function \n";
-  return; 
+            if(node->left != NULL){
+            printtree(node->left);
+}
+            std::cout << node->value << " ";
+
+            if(node->right != NULL){
+            printtree(node->right);
 }
 
+          return;
+}
+void AVLTree::printheight(AVLNode* node, int count){
+
+
+            // if(node->left != NULL && node->right != NULL){
+            //   count ++;
+            //   printheight(node->left, count);
+            //   printheight(node->right, count);
+            //
+            // }
+            if(node->left != NULL){
+            count ++;
+            printheight(node->left, count);
+          }
+            else if (node->right != NULL){
+            count++;
+            printheight(node->right, count);
+}
+            else{
+              if (count > 0) {
+              std::cout<<count<<" ";
+              count = 0;
+              return;
+            }}
+//
+//             if(node->right != NULL){
+//             count++;
+//             printheight(node->right, count);
+// }
+//             else if (node->left != NULL){
+//             count ++;
+//             printheight(node->left, count);
+//           }
+          // else{
+            if (count > 0) {
+            std::cout<<count<<" ";
+            count = 0;
+            return;
+          }
+          count = 0;
+        return;
+ }
 
 AVLNode* AVLTree::getPred(AVLNode* node){ // get predecesor function needs implemented
 
